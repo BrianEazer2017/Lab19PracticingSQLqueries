@@ -1,0 +1,43 @@
+1. select * from customers;
+2. select distinct country from customers;
+3. select *
+from customers
+where customerID like 'BL%';
+4. select * from orders
+limit 100;
+5. select * 
+from customers 
+where PostalCode in (3012, 1010, 12209, 05023);
+6. select *
+from orders
+where shipregion is not  NULL;
+7. select *
+from customers 
+order by country, city;
+8. 
+INSERT INTO customers (CustomerID, CompanyName, ContactName, ContactTitle, Address, City, Region)
+VALUES ('BREAZ', 'Grand Circus', 'David Wolverton', 'TEacher', 'Woodward AVe', 'Detroit', 'MI');
+9. update orders
+set ShipRegion = 'Eurozone'
+where ShipCountry = 'France';
+10. DELETE FROM `order details` WHERE quantity = 1;
+11. SELECT AVG(quantity), max(Quantity), min(quantity)
+FROM `order details`;
+12. SELECT AVG(quantity), max(Quantity), min(quantity)
+FROM `order details` group by orderid;
+13. select customerID
+from orders
+where orderid = '10290';
+14. SELECT * FROM Orders
+INNER JOIN Customers on Orders.Customerid = Customers.Customerid;
+
+SELECT * FROM Orders
+LEFT JOIN Customers ON Orders.Customerid = customers.Customerid;
+
+SELECT * FROM Orders
+RIGHT JOIN Customers ON Orders.Customerid = customers.Customerid;
+15. select firstname
+from employees
+where reportsto is null;
+16. select firstName from employees 
+where reportsto = (select employeeid from employees where firstname = 'Andrew');
